@@ -19,14 +19,14 @@ for ( my $i = 0 ; $i <= $#array ; $i++ )
 {
 	if ( $array[$i] =~ /Star_name/ )
 	{
-	    print $array[$i];
+#	    print $array[$i];
         my @parts = split(/=/, $array[$i]);
 	    my $wholeText = $parts[1];
 		if ($wholeText =~ /\"$/)   #check the last character if " which is the end of the string
 		{
 		   $wholeText =~ s/\"(.*)\"/$1/;   #extract the string, removed the quotes
 		}
-		print $wholeText;
+		print "$filename  $wholeText";
 	}
 }
 
